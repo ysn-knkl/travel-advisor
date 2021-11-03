@@ -19,7 +19,7 @@ const Map = ({
   const classes = useStyles();
   const isDesktop = useMediaQuery("(min-width:600px)");
 
-  const Marker = (place) => {
+  const Marker = ({place}) => {
     return (
       <div className={classes.markerContainer}>
         {!isDesktop ? (
