@@ -14,7 +14,6 @@ import PhoneIcon from "@material-ui/icons/Phone";
 import Rating from "@material-ui/lab/Rating";
 
 import useStyles from "./styles";
-import { PlaceSharp } from "@material-ui/icons";
 
 const PlaceDetails = ({ place, selected, refProp }) => {
   const classes = useStyles();
@@ -49,12 +48,13 @@ const PlaceDetails = ({ place, selected, refProp }) => {
             {place.ranking}
           </Typography>
         </Box>
-        {place?.awards?.map((award) => (
+        {place?.awards?.map((award,i) => (
           <Box
             my={1}
             display="flex"
             justifyContent="space-between"
             align="center"
+            key={i}
           >
             <img src={award.images.small} alt={award.display_name} />
             <Typography variant="subtitle2" color="textSecondary">
